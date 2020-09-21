@@ -12,7 +12,7 @@
 import NumberDisplay from '../../components/NumberDisplay.vue'
 import NumberSubmit from '../../components/NumberSubmit.vue'
 import { eventCenter, getCurrentInstance, navigateTo } from '@tarojs/taro'
-const worker = wx.createWorker('workers/request/index.js') // 文件名指定 worker 的入口文件路径，绝对路径
+// const worker = wx.createWorker('workers/request/index.js') // 文件名指定 worker 的入口文件路径，绝对路径
 
 export default {
   name: 'Index',
@@ -112,9 +112,9 @@ export default {
     },
     handleTap () {
       console.log('handleTap')
-      worker.postMessage({
-        msg: 'hello worker'
-      })
+      // worker.postMessage({
+      //   msg: 'hello worker'
+      // })
     },
     switchPage () {
       console.log('switchPage')
