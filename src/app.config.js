@@ -7,7 +7,10 @@ export default {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'black',
+    enablePullDownRefresh: true,
+    onReachBottomDistance: 50,
+    pageOrientation: 'auto'
   },
   tabBar: {
     list: [{
@@ -24,6 +27,32 @@ export default {
     'color': '#000',
     'selectedColor': '#56abe4',
     'backgroundColor': '#fff',
-    'borderStyle': 'white'
+    'borderStyle': 'black',
+    position: 'bottom'
   },
+  // 使用分包
+  subpackages: [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/cat",
+        "pages/dog"
+      ]
+    }, {
+      "root": "packageB",
+      "name": "pack2",
+      "pages": [
+        "pages/apple",
+        "pages/banana"
+      ]
+    }
+  ],
+  // 分包预下载(没效果)
+  preloadRule: {
+    "packageA/pages/cat": {
+      "network": "all",
+      "packages": ["pack2"]
+    },
+  },
+  workers: "workers",
 }
